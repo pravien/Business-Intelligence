@@ -47,3 +47,5 @@ def generate_histogram(data):
 ```
 
 ## Write (text) a sentence into the assignment_1.py about the result of the histogram.
+
+![](prices-hist.png?raw=true)
