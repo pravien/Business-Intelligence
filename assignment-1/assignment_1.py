@@ -79,7 +79,7 @@ def generate_histogram(data):
     fig.suptitle('Housing prices pr squaremeter')
     plt.xticks(rotation=45)
     plt.ylabel('Amount of houses')
-    plt.xlabel('Prices')
+    plt.xlabel('Prices pr square meter')
     plt.hist(prices,bins = 7,edgecolor='black', linewidth=1.2)
     fig.savefig('./prices-hist.png')
 
