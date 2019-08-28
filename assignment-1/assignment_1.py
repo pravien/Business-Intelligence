@@ -72,8 +72,16 @@ def generate_plot(data):
     plt.scatter(x_values, y_values, s=100)
     fig.savefig('./prices.png', bbox_inches='tight')
 
-#def generate_histogram():
-#    ....
+
+def generate_histogram(data):
+    indx, prices = zip(*data)
+    fig = plt.figure(figsize=(10, 10))
+    fig.suptitle('Housing prices pr squaremeter')
+    plt.xticks(rotation=45)
+    plt.ylabel('Amount of houses')
+    plt.xlabel('Prices')
+    plt.hist(prices,bins = 7,edgecolor='black', linewidth=1.2)
+    fig.savefig('./prices-hist.png')
 
 def run():
     file_url = 'https://raw.githubusercontent.com/datsoftlyngby/' \
@@ -89,6 +97,7 @@ def run():
     avg_price = compute_avg_price(data)
     print(avg_price)
     generate_plot(data)
+    generate_histogram(data)
 #    ...
 
 if __name__ == '__main__':
