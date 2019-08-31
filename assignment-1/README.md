@@ -10,11 +10,11 @@
    
 ### price_list.csv
 
-Is a csv file that contains multiple rows of information about many different appartments. Each row contains a "Street", "City", "Price", "Sqm" and "Price pr sqm"
+Is a csv file that contains multiple rows of information about many different appartments and what they are valued at. Each row contains a "Street", "City", "Price", "Sqm" and "Price pr sqm"
 
 ### price_list.txt
 
-Is a txt file that contains multiple rows of information about many different appartments. Each row contains a "Street", "City", "Price", "Sqm" and "Price pr sqm"
+Is a txt file that contains multiple rows of information about many different appartments and what they are valued at. Each row contains a "Street", "City", "Price", "Sqm" and "Price pr sqm"
 
 ### avg_price.txt
 
@@ -47,5 +47,7 @@ def generate_histogram(data):
 ```
 
 ## Write (text) a sentence into the assignment_1.py about the result of the histogram.
+
+This histogram show us that 30 appartments are listed at a price point between 1250000 - 4250000. This is 71,4 % of the houses from the dataset.
 
 ![](prices-hist.png?raw=true)

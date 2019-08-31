@@ -96,18 +96,20 @@ def generate_plot(data):
 def generate_histogram(data):
     #Unpacks the data from data. This is posible because data is a tuple.
     indx, prices = zip(*data)
+    prices = list(prices)
+    print('minimum: ',min(prices),', max: ',max(prices))
     #Set the figure size.
     fig = plt.figure(figsize=(10, 10))
     #Set figure title
-    fig.suptitle('Housing prices pr squaremeter')
+    fig.suptitle('Housing prices')
     # Rotate the x label values by 45 degrees.
     plt.xticks(rotation=45)
     # Add y label.
     plt.ylabel('Amount of houses')
-    plt.xlabel('Prices pr square meter')
+    plt.xlabel('Prices')
     #Generetaes the histogram with a edgecolor of black and a linewidth of 1.2.
     #The histogram uses 7 bins.
-    plt.hist(prices,bins = 7,edgecolor='black', linewidth=1.2)
+    plt.hist(prices,bins=range(250000,8000000,1000000),edgecolor='black', linewidth=1.2)
     fig.savefig('./prices-hist.png')
 
 def run():
