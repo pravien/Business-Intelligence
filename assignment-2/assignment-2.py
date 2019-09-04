@@ -35,15 +35,15 @@ def create_data_frame():
 
     return pd.concat(li, axis=0, ignore_index=True)
 
-def create_city_csv_(df_1992):
+def create_city_csv_(dataframe, year):
     cities = {'København': '1049',
              'Odense': '5000',
              'Aarhus': '8000',
              'Aalborg': '9000'}
     for city in cities:
-        mask = (df_1992['zip_code_num'] == cities[city])
-        df = df_1992[mask]
-        df.to_csv(city + ".csv", encoding='utf-8')
+        mask = (dataframe['zip_code_num'] == cities[city])
+        df = dataframe[mask]
+        df.to_csv('./' + year + '/' + city + ".csv", encoding='utf-8')
 
 
 if __name__ == '__main__':
@@ -63,7 +63,7 @@ if __name__ == '__main__':
      ((df['zip_code_num'] == '1050') | (df['zip_code_num'] == '1049') | (['zip_code_num'] == '5000') | 
      (['zip_code_num'] == '8000') | (['zip_code_num'] == '9000'))
      )
-     
-    create_city_csv_(df[mask_1992]);
+
+    create_city_csv_(df[mask_1992], '1992');
     print(df[mask_1992])
     
