@@ -23,8 +23,10 @@ def get_locations(address, zip_code):
         print('Skipped geocoding of {} {}'.format(address, zip_code))
         return None, None
 
+
 def remove_city_name(zip_code):
     return ' '.join(zip_code.split(' ')[:-2])
+
 
 def create_data_frame():
     li = []
@@ -35,6 +37,7 @@ def create_data_frame():
 
     return pd.concat(li, axis=0, ignore_index=True)
 
+
 def create_city_csv_(dataframe, year):
     cities = {
               'Odense': '5000',
@@ -44,7 +47,7 @@ def create_city_csv_(dataframe, year):
     for city in cities:
         mask = (dataframe['zip_code_num'] == cities[city])
         dataf = dataframe[mask]
-        dataf.to_csv('./' + year + '/' + city + ".csv", encoding='utf-8')
+        dataf.to_csv('./' + year + '/' + city + ".csv", index=False,encoding='utf-8')
 
 
 if __name__ == '__main__':
