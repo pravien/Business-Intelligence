@@ -74,6 +74,6 @@ if __name__ == '__main__':
      (['zip_code_num'] == '8000') | (['zip_code_num'] == '9000'))
      )
 
-    create_city_csv(df[mask_1992], '2016');
+    create_city_csv(df[mask_1992], '2016')
     print('Average price per square meter for the year 1992 is {} m\u00b2'.format(mean(df[mask_1992]['price_per_sq_m'])),)
     print('Average price per square meter for the year 2016 is {} m\u00b2'.format(mean(df[mask_2016]['price_per_sq_m'])),)
