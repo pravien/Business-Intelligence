@@ -1,7 +1,7 @@
 address,zip_code,price,sell_date,sell_type,price_per_sq_m,no_rooms,housing_type,size_in_sq_m,year_of_construction,price_change_in_pct
 "Ved Volden 5, 5. TV",1049 København K,4000000,23-05-1992,Alm. Salg,43956,3,Lejlighed,91,1938,0
-"Rådhusstræde 4C, 1",1466 København K,4895000,18-05-2017,Alm. Salg,46619,3,Lejlighed,105,1796,0
-"Store Kongensgade 112A, 3",1264 København K,250000,15-05-2017,Andet,1851,2,Lejlighed,135,1860,0
+"Rådhusstræde 4C, 1",1049 København K,4895000,18-05-1992,Alm. Salg,46619,3,Lejlighed,105,1796,0
+"Store Kongensgade 112A, 3",1049 København K,250000,15-05-2016,Andet,1851,2,Lejlighed,135,1860,0
 "Amaliegade 13G, 2",1256 København K,7375000,15-05-2017,Alm. Salg,75255,3,Lejlighed,98,1948,9
 "Borgergade 144, 3. TH",1300 København K,5825000,10-05-2017,Alm. Salg,57673,3,Lejlighed,101,1854,3
 "Nørre Søgade 9A, 1. TH",1370 København K,1126250,10-05-2017,Fam. Salg,10525,3,Lejlighed,107,1882,0
