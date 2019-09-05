@@ -1,4 +1,5 @@
 import os
+from os.path import join
 import pandas as pd
 from tqdm import tqdm
 from geopy.geocoders import Nominatim
@@ -39,12 +40,16 @@ def create_data_frame():
     return pd.concat(li, axis=0, ignore_index=True)
 
 
-def create_city_csv_(dataframe, year):
+def create_city_csv(dataframe, year):
     cities = {
               'Odense': '5000',
               'København': '1049',
               'Aarhus': '8000',
               'Aalborg': '9000'}
+    folder_path = join(os.getcwd(),year)          
+    if not os.path.exists(folder_path):
+        os.mkdir(folder_path)
+        
     for city in cities:
         mask = (dataframe['zip_code_num'] == cities[city])
         dataf = dataframe[mask]
@@ -69,6 +74,6 @@ if __name__ == '__main__':
      (['zip_code_num'] == '8000') | (['zip_code_num'] == '9000'))
      )
 
-    create_city_csv_(df[mask_1992], '1992');
+    create_city_csv(df[mask_1992], '2016');
     print('Average price per square meter for the year 1992 is {} square meter'.format(mean(df[mask_1992]['price_per_sq_m'])),)
     print('Average price per square meter for the year 2016 is {} square meter'.format(mean(df[mask_2016]['price_per_sq_m'])),)
