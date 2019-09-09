@@ -60,8 +60,9 @@ if __name__ == '__main__':
     # read the csv.
     df = create_data_frame()
     # Add 2 new columns for latitude and longitude and writes i to a csv file.
-    df['lat'],df['long']= zip(*df.apply (lambda row: get_locations(row['address'].split(',')[0],row['zip_code']), axis=1))
-    df.to_csv("lat-long.csv", index=False,encoding='utf-8')
+    #df['lat'],df['long']= zip(*df.apply (lambda row: get_locations(row['address'].split(',')[0],row['zip_code']), axis=1))
+    print(get_locations('Plastvænget 10','9560 Hadsund'))
+    #df.to_csv("lat-long.csv", index=False,encoding='utf-8')
 
 
     
