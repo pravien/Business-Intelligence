@@ -1,4 +1,11 @@
 # Assingment - 2
+
+## Requirements
+
+- The boliga_stats folder is required to be able to run this project. It should be placed in the root folder.
+- There are some module's you have to download using pip. All of the needed module's are specified in the top of the notebook.
+
+## Description
 Geocode the the entire dataset of Danish housing sales data. Add two new columns to the DataFrame, one for latitude (lat) and one for longitude (lon) coordinates per address. Do the geocoding with help of the OSM dataset stored in a file as discussed in class. Save that DataFrame to a CSV file with the help of pandas'
 
 Convert all sales dates in the dataset into proper datetime objects, see http://pandas.pydata.org/pandas-docs/stable/generated/pandas.to_datetime.html.
