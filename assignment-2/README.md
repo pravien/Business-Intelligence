@@ -9,10 +9,21 @@
 
 ## How to run the code
 
-I wouldn't recommend you to not run the code, because some part of the code take a while to run.
-Just look at the results.
+1. Clone the project and cd into it.
 
-Insert step by step guide.
+2. Make a folder called data.
+
+3. Download the Json file from this link https://github.com/datsoftlyngby/soft2019fall-bi-teaching-material/blob/master/week36/assignment_2/postcodes.zip 
+
+4. Extract the file and copy the postcodes.json and save it in the folder data.
+
+5. Now download the boliga_stat. If you have it laying arround. Copy the folder boliga_stats into the repo.
+
+6. Open the notebook by running the command jupyter-notebook.
+
+7. Check if you have all of the modules installed. If not install them.
+
+8. Run the code blocks.
 
 ## Description
 Geocode the the entire dataset of Danish housing sales data. Add two new columns to the DataFrame, one for latitude (lat) and one for longitude (lon) coordinates per address. Do the geocoding with help of the OSM dataset stored in a file as discussed in class. Save that DataFrame to a CSV file with the help of pandas'
