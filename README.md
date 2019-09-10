@@ -5,6 +5,8 @@ Group Members : Lovro Bilješković, Mikkel Lindstrøm Hansen, Pravien Thaveenra
 
 # Assignment - 2
 
+The source code can be found in [assignment-2](https://github.com/pravien/Business-Intelligence/tree/master/assignment-2).
+
 ## Read the entire dataset of Danish housing sales data, from Boliga, into a Pandas DataFrame. Use the read_csv function from the pandas module.
 
 Here is the function which generates the dataframe.
@@ -38,6 +40,18 @@ df['sell_date'] = pd.to_datetime(df['sell_date'],format='%d-%m-%Y')
 ## Compute the average price per square meter for the years 1992 and 2016 respectively for the city centers of Copenhagen (zip code 1050-1049), Odense (zip code 5000), Aarhus (zip code 8000), and Aalborg (zip code 9000). Create two new DataFrames, one for the year 1992 and one for the year 2016, which contain the respective zip codes and the average price per square meter corresponding to the aforementioned cities. Let the DataFrames be sorted by ascending prices.
 
 ```python
+def calulate_avg_year(df,mask,year,zipcode):
+    temp = df[mask]
+    temp = temp.dropna(subset=['price_per_sq_m'])
+    if not temp.empty:
+        #print('Average price per square meter for the zip code {} in the year {} is {} pr. m\u00b2\n'.format(
+          #  zipcode,year,mean(temp['price_per_sq_m'])))
+        return mean(temp['price_per_sq_m'])
+    else:
+        #print('Average price per square meter for the zip code {} in the year {} is {} pr. m\u00b2\n'.format(
+         #   zipcode,year,0))
+        return 0
+
 list_1992 = []
 list_2016 = []
 for mask,zip_code,year in masks:
