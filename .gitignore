@@ -106,4 +106,4 @@ venv.bak/
 # Mac
 
 .Ds_Store
-.csv
+*.csv
