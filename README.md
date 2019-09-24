@@ -3,107 +3,57 @@
 Group Name : Ill Introduction<br/>
 Group Members : Lovro Bilješković, Mikkel Lindstrøm Hansen, Pravien Thaveenrasingam
 
-# Assignment - 2
+# Assignment - 3
 
-The source code can be found in [assignment-2](https://github.com/pravien/Business-Intelligence/tree/master/assignment-2).
-
----
-
-## Read the entire dataset of Danish housing sales data, from Boliga, into a Pandas DataFrame. Use the read_csv function from the pandas module.
-
-Here is the function which generates the dataframe.
-
-```python
-def create_data_frame():
-    li = []
-    for filename in os.listdir('./boliga_stats'):
-        #filename = os.path.join(os.getcwd(),filename)
-        df = pd.read_csv(os.path.join('./boliga_stats',filename), index_col=None, header=0)
-        li.append(df)
-
-    return pd.concat(li, axis=0, ignore_index=True)
-```
+The source code can be found in [assignment-3](https://github.com/pravien/Business-Intelligence/tree/master/assignment-3).
 
 ---
 
-## Geocode the the entire dataset of Danish housing sales data. Add two new columns to the DataFrame, one for latitude (lat) and one for longitude (lon) coordinates per address
+## Requirements
 
-```python
-df['long'],df['lat'] = zip(*df.apply(lambda row : get_geo_code(row['address'],row['zip_code_num'],data), axis=1))
-# removing values where the lattitude and longitude is None.
-df = df.dropna()
-df.to_csv('./house_sale_data_with_geocodes.csv', index=False,encoding='utf-8')
-```
+- You need to install Basemap. (not in pip so you have to use conda or something different)
+- There are some module's you have to download using pip. All of the needed module's are specified in the top of the notebook or before they are needed for the specific code.
 
 ---
 
-## Convert all sales dates in the dataset into proper datetime objects
+## How to run the code
 
-```python
-df['sell_date'] = pd.to_datetime(df['sell_date'],format='%d-%m-%Y')
-```
----
+1. Clone the project and cd into it.
 
+2. Open the notebook by running the command jupyter-notebook.
 
-## Compute the average price per square meter for the years 1992 and 2016 respectively for the city centers of Copenhagen (zip code 1050-1049), Odense (zip code 5000), Aarhus (zip code 8000), and Aalborg (zip code 9000). Create two new DataFrames, one for the year 1992 and one for the year 2016, which contain the respective zip codes and the average price per square meter corresponding to the aforementioned cities. Let the DataFrames be sorted by ascending prices.
+3. Check if you have all of the modules installed. If not install them.
 
-```python
-def calulate_avg_year(df,mask,year,zipcode):
-    temp = df[mask]
-    temp = temp.dropna(subset=['price_per_sq_m'])
-    if not temp.empty:
-        #print('Average price per square meter for the zip code {} in the year {} is {} pr. m\u00b2\n'.format(
-          #  zipcode,year,mean(temp['price_per_sq_m'])))
-        return mean(temp['price_per_sq_m'])
-    else:
-        #print('Average price per square meter for the zip code {} in the year {} is {} pr. m\u00b2\n'.format(
-         #   zipcode,year,0))
-        return 0
-
-list_1992 = []
-list_2016 = []
-for mask,zip_code,year in masks:
-    avg_sqr_price = calulate_avg_year(df,mask,year,zip_code)
-    if year == '1992':
-        list_1992.append((zip_code,avg_sqr_price))
-    else:
-        list_2016.append((zip_code,avg_sqr_price))
-
-df_2016 = pd.DataFrame(list_2016,columns=['zipcode', 'avg_sqr_m_price'])
-df_1992 = pd.DataFrame(list_1992,columns=['zipcode', 'avg_sqr_m_price'])
-```
+4. Run the code blocks.
 
 ---
 
-## Create, with the help of the pandas module, four new CSV files containing the sales data for the year 1992 for the city centers of Copenhagen (zip code 1050-1049), Odense (zip code 5000), Aarhus (zip code 8000), and Aalborg (zip code 9000)
+## Solutions
 
-``` python
-def create_city_csv(dataframe, year):
-    cities = {
-              'Odense': '5000',
-              'København': '1050',
-              'Aarhus': '8000',
-              'Aalborg': '9000'}
-    folder_path = join(os.getcwd(),year)          
-    if not os.path.exists(folder_path):
-        os.mkdir(folder_path)
-        
-    for city in cities:
-        mask = ((dataframe['zip_code_num'] == cities[city]) & (df['sell_date'].dt.year == int(year)))
-        dataf = dataframe[mask]
-        dataf.to_csv('./' + year + '/' + city + ".csv", index=False,encoding='utf-8')
 
-create_city_csv(df, '1992')
-```
+### Create a plot with the help of Basemap, on which you plot sales records for 2015 which are not farther away than 50km from Copenhagen city center (lat: 55.676111, lon: 12.568333)
+
+we have sat a limit to only show tre, because all of the dots a placed close to each other so it gets messy.
+
+![alt text](https://github.com/pravien/Business-Intelligence/tree/master/assignment-3/basemap.png)
 
 ---
 
-## Create a 2-dimensional scatter plot, which contains a dot for each location in the dataset of Danish housing sales data. Plot the longitude values on the x- axis and plot the latitude values on the y-axis.
+### Use folium to plot the locations of the 1992 housing sales for the city centers of Copenhagen (zip code 1000-1499), Odense (zip code 5000), Aarhus (zip code 8000), and Aalborg (zip code 9000), see Assignment 2 onto a map.
 
-![plot1](./assignment-2/plot-1.png)
+See the file large_flat_trades.html
 
 ---
 
-## Create another scatter plot as in the task above, but use the computed distances as color values
+### Create a 2D plot, which compares prices per square meter (on the x-axis) and distance to Nørreport st. (y-axis) for all housing on Sjæland for the year 2005 and where the zip code is lower than 3000 and the price per square meter is lower than 80000Dkk. Describe in words what you can read out of the plot. Formulate a hypothesis on how the values on the two axis might be related.
 
-![plot2](./assignment-2/plot-2.png)
+From looking at the plot we can see there are alot of sales close to Nørreport St. Some are cheap and some are expensive. But when you are far away the price drops.<br/>
+Hypothesis: The further away you live from Nørreport St. the cheaper the price per square meter is
+
+![alt text](https://github.com/pravien/Business-Intelligence/tree/master/assignment-3/2d-plot.png)
+
+---
+
+### Create a histogram (bar plot), which visualizes the frequency of house trades per zip code area corresponding to the entire dataset of housing sale records.
+
+![alt text](https://github.com/pravien/Business-Intelligence/tree/master/assignment-3/hist.png)
