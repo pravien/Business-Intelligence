@@ -35,13 +35,13 @@ The source code can be found in [assignment-3](https://github.com/pravien/Busine
 
 we have sat a limit to only show tre, because all of the dots a placed close to each other so it gets messy.
 
-![alt text](https://github.com/pravien/Business-Intelligence/tree/master/assignment-3/basemap.png)
+![alt text](./assignment-3/basemap.png)
 
 ---
 
 ### Use folium to plot the locations of the 1992 housing sales for the city centers of Copenhagen (zip code 1000-1499), Odense (zip code 5000), Aarhus (zip code 8000), and Aalborg (zip code 9000), see Assignment 2 onto a map.
 
-See the file large_flat_trades.html
+See the file large_flat_trades.html in the repo.
 
 ---
 
@@ -50,10 +50,10 @@ See the file large_flat_trades.html
 From looking at the plot we can see there are alot of sales close to Nørreport St. Some are cheap and some are expensive. But when you are far away the price drops.<br/>
 Hypothesis: The further away you live from Nørreport St. the cheaper the price per square meter is
 
-![alt text](https://github.com/pravien/Business-Intelligence/tree/master/assignment-3/2d-plot.png)
+![alt text](./assignment-3/2d-plot.png)
 
 ---
 
 ### Create a histogram (bar plot), which visualizes the frequency of house trades per zip code area corresponding to the entire dataset of housing sale records.
 
-![alt text](https://github.com/pravien/Business-Intelligence/tree/master/assignment-3/hist.png)
+![alt text](./assignment-3/hist.png)
