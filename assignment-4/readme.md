@@ -26,7 +26,9 @@ A more detailed look into Copenhagen to see the dot size is actually different.
 <img src="itemno8a.png"
      alt="Detailed view"
      style="float: left; margin-right: 10px;" />
-Only these few places where a house has been sold for less than 5000 kroner pr square meter.
+
+## 9(freestyle):
+Only these few places where a house has been sold for less than 5000 kroner pr square meter. (dot in hillerød and copenhagen is on the map by default so not anything showing in these locations)
 <img src="itemno9.png"
      alt="magic"
      style="float: left; margin-right: 10px;" />
