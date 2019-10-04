@@ -5,7 +5,7 @@ Mikkel, Pravien, Lovro
 
 ## Requirements:
 - Make sure you have Power BI installed.
-- Download the assignment-4.pbit which is a template for the power bi (client itself is too big) open up the Power BI file in your Power BI.
+- Download the assignment-4a.pbit which is the power bi client.
 - Then take the csv file from assignment 2/3 with geocodes in them and add that as a data source for the data.
 - The assignment itself is runned throug azure with a DB but only one IP is allowed.
 
