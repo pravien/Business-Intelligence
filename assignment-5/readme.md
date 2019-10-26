@@ -10,7 +10,7 @@ Mikkel, Pravien, Lovro
 ###    Open the project with data-integration.
 ###   Then take the csv file from assignment 2/3 with geocodes in them and add that as a data source for the data.
 ##  2:
-###    Import the xml files and the csv as input
+###    Import the xml files and the csv as the two inputs from assignment 2/3
 
 
 ## Assignments: 
